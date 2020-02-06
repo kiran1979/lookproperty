@@ -1,0 +1,58 @@
+<div class="container mt-5">
+    <div class="row">
+        
+        <form [formGroup]="userProfileForm" (ngSubmit)="onSubmit()">
+            <div class="col-6">
+
+            <label>
+                First Name:<br>
+
+                <input type="text" formControlName="firstName">
+            </label><br>
+            <label>
+                Last Name:<br>
+
+                <input type="text" formControlName="lastName">
+            </label><br>
+            <label>
+                Age:<br>
+
+                <input type="text" formControlName="age">
+            </label><br>
+            <label>
+                Email:<br>
+
+                <input type="text" formControlName="email">
+            </label><br>
+        </div>
+        <div  class="col-6">
+            <div formGroupName="addressGroup">
+               <h4>Address</h4>
+                <label>
+                    Address1:<br>
+                    <input type="text" formControlName="address1">
+                </label><br><label>
+                    Address2:<br>
+                    <input type="text" formControlName="address2">
+                </label><br><label>
+                    State:<br>
+                    <input type="text" formControlName="state">
+                </label><br>
+               <label>
+                   Zip:<br>
+                   <input type="text" formControlName="zip">
+               </label>
+            
+            </div>
+        </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!userProfileForm.valid">Submit</button>
+        </form>
+    </div>
+ </div>
+
+ <div class="container">
+     <div class="row row-cols-2">
+        <div class="col">ABC</div>
+        <div class="col">DEF</div>
+     </div>
+ </div>

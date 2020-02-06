@@ -1,0 +1,24 @@
+
+
+<div class="container">
+    <div class="row">
+        <h1>Welcome to Services</h1>
+        <input type="text" [(ngModel)] = "postcode" (keydown.space)="$event.preventDefault();">
+        <button (click) = "sendPostcode()">search</button>
+    </div>
+  
+   <div>
+    <label>List of Address: </label>
+    <select (change)= selectedValues($event)>
+      <option value="0">---All---</option>
+      <option *ngFor="let addr of address">
+            {{addr}}
+      </option>
+    </select>
+    <div>
+    {{selectedAddress}}
+    <!-- {{splitAddress}} -->
+    </div>
+  </div>
+
+</div>
