@@ -1,9 +1,8 @@
-<div class="container mt-5">
+<!-- <div class="container mt-5">
     <div class="row">
         
         <form [formGroup]="userProfileForm" (ngSubmit)="onSubmit()">
-            <div class="col-6">
-
+           
             <label>
                 First Name:<br>
 
@@ -24,8 +23,7 @@
 
                 <input type="text" formControlName="email">
             </label><br>
-        </div>
-        <div  class="col-6">
+        
             <div formGroupName="addressGroup">
                <h4>Address</h4>
                 <label>
@@ -44,15 +42,66 @@
                </label>
             
             </div>
-        </div>
             <button type="submit" class="btn btn-primary" [disabled]="!userProfileForm.valid">Submit</button>
         </form>
     </div>
+ </div> -->
+<div class="container">
+ <div class="card m-3">
+    <h5 class="card-header">Regestration Form</h5>
+    <div class="card-body">
+    <form [formGroup]="userProfileForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="col-sm-1">
+            <label>Regestring</label>
+                    <select formControlName="regestringBy" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.regestringBy.errors }">
+                        <option value=""></option>
+                        <option value="Landloard">Landloard</option>
+                        <option value="Agent">Agent</option>
+                    </select>
+                    <div *ngIf="submitted && f.regestringBy.errors" class="invalid-feedback">
+                        <div *ngIf="f.regestringBy.errors.required">Please Select..</div>
+                    </div>
+                    <div class="col-sm-1">
+                    </div>
+            <label>Title</label>
+                    <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+                        <option value=""></option>
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Miss">Miss</option>
+                        <option value="Ms">Ms</option>
+                    </select>
+                    <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                        <div *ngIf="f.title.errors.required">Title is required</div>
+                    </div>
+                </div>
+            <div class="col-sm-5">
+            <label>First Name</label>
+            <input type="text" class="form-control" formControlName="firstName">
+            <label>Last Name</label>
+            <input type="text" class="form-control" formControlName="lastName">
+            <label>Age</label>
+            <input type="text" class="form-control" formControlName="age">
+            <label>Email</label>
+            <input type="text" class="form-control" formControlName="email">
+        </div>
+        <div class="col-sm-5">
+            <div formGroupName="addressGroup" >
+                 <label>Address1:</label>
+                 <input type="text" class="form-control" formControlName="address1">
+                 <label>Address2:</label>
+                 <input type="text" class="form-control" formControlName="address2">
+                 <label>State:</label>
+                 <input type="text" class="form-control" formControlName="state">
+                <label>Zip:</label>
+                <input type="text" class="form-control" formControlName="zip">
+             </div>
+            </div>
+            
+        </div>
+        <button type="submit" class="btn btn-primary mt-5 " [disabled]="!userProfileForm.valid">Submit</button>
+    </form>
  </div>
-
- <div class="container">
-     <div class="row row-cols-2">
-        <div class="col">ABC</div>
-        <div class="col">DEF</div>
-     </div>
- </div>
+</div>
+</div>

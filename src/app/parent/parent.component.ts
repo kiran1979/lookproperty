@@ -16,6 +16,8 @@ export class ParentComponent implements OnInit {
     lastName: new FormControl('', Validators.required),
     age: new FormControl(''),
     email: new FormControl(''),
+    title: new FormControl(''),
+    regestringBy: new FormControl(' '),
         addressGroup: new FormGroup({
           address1: new FormControl('', Validators.required),
           address2: new FormControl(''),

@@ -1,0 +1,26 @@
+<div class="container">
+<table class="table table-bordered bg-defalut">
+    <tr>
+        <th>ID</th>
+        <th>User Name</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Salary</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let users of user">
+        <td>{{users.id}}</td>
+        <td>{{users.username}}</td>
+        <td>{{users.firstname}}</td>
+        <td>{{users.lastname}}</td>
+        <td>{{users.age}}</td>
+        <td>{{users.salary}}</td>
+        <td><a href="javascript:void(0)" class="btn btn-primary"
+            (click)="editUser(users)">Edit</a> &nbsp; 
+            <a href="javascript:void(0)" class="btn btn-danger"
+            (click)="deleteUser(users)"
+            >Delete</a></td>
+    </tr>
+</table>
+</div> 
